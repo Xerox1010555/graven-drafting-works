@@ -1,0 +1,320 @@
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+/* Blur Fade Up - Entrance animation for captions */
+@keyframes blurFadeUp {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.animate-blur-fade-up {
+  opacity: 0;
+  animation: var(--animate-blur-fade-up);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blur-fade-up {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* Draw Line - For dimension rules */
+@keyframes drawLine {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.rule-draw {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: var(--animate-draw-line);
+}
+
+.rule-draw-r {
+  transform-origin: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rule-draw {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Bounce for scroll indicator */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: var(--animate-bounce-slow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce {
+    animation: none;
+  }
+}
+
+/* Liquid Glass - Shimmer sweep */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.liquid-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Fade in/out for video */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.video-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.video-fade-out {
+  animation: fadeOut 0.5s ease-in forwards;
+}
+
+/* Slide up/down for mobile menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-in forwards;
+}
+
+/* Scale for hamburger menu */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-scale-out {
+  animation: scaleOut 0.5s ease-in forwards;
+}
+
+/* Pulse for loading states */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Spin for loading spinners */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Floating for decorative elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Reveal text by word */
+@keyframes revealWord {
+  from {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-word {
+  overflow: hidden;
+}
+
+.reveal-word span {
+  display: inline-block;
+  opacity: 0;
+  animation: revealWord 0.6s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-0 {
+  animation-delay: 0ms;
+}
+.delay-50 {
+  animation-delay: 50ms;
+}
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-150 {
+  animation-delay: 150ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-250 {
+  animation-delay: 250ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-350 {
+  animation-delay: 350ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-450 {
+  animation-delay: 450ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-550 {
+  animation-delay: 550ms;
+}
+.delay-600 {
+  animation-delay: 600ms;
+}
+.delay-650 {
+  animation-delay: 650ms;
+}
+.delay-700 {
+  animation-delay: 700ms;
+}
+.delay-750 {
+  animation-delay: 750ms;
+}
+.delay-800 {
+  animation-delay: 800ms;
+}
+
+/* Stagger for children */
+.stagger-50 > * {
+  animation-delay: calc(var(--stagger-index, 0) * 50ms);
+}
+.stagger-100 > * {
+  animation-delay: calc(var(--stagger-index, 0) * 100ms);
+}

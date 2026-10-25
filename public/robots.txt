@@ -1,0 +1,13 @@
+# GRAVEN Drafting Works
+User-agent: *
+Allow: /
+
+Sitemap: https://graven-drafting-works.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 10
+
+# Disallow admin/private paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
